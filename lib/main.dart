@@ -21,10 +21,10 @@ class StoryPage extends StatefulWidget {
   const StoryPage({super.key});
 
   @override
-  _StoryPageState createState() => _StoryPageState();
+  StoryPageState createState() => StoryPageState();
 }
 
-class _StoryPageState extends State<StoryPage> {
+class StoryPageState extends State<StoryPage> {
   final title = storyLogic.getStory();
 
   @override
@@ -58,10 +58,6 @@ class _StoryPageState extends State<StoryPage> {
               Expanded(
                 flex: 2,
                 child: TextButton(
-                  onPressed: () {
-                    //Choice 1 made by user.
-                    storyLogic.nextStory(1);
-                  },
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(Colors.red),
                     foregroundColor:
@@ -74,6 +70,11 @@ class _StoryPageState extends State<StoryPage> {
                       fontSize: 18.0,
                     ),
                   ),
+                  onPressed: () {
+                    //Choice 1 made by user.
+                    storyLogic.nextStory(1);
+                    setState(() {});
+                  },
                 ),
               ),
               const SizedBox(
@@ -87,6 +88,7 @@ class _StoryPageState extends State<StoryPage> {
                   onPressed: () {
                     //Choice 2 made by user.
                     storyLogic.nextStory(2);
+                    setState(() {});
                   },
                   style: ButtonStyle(
                     backgroundColor:
