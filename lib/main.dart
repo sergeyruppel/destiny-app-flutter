@@ -1,8 +1,6 @@
 import 'package:destiny_app_flutter/story_logic.dart';
 import 'package:flutter/material.dart';
 
-// Step 15 - Run the app and see if you can see the screen update with the first story. Delete this \TODO if it looks as you expected.
-
 void main() => runApp(const Destini());
 
 class Destini extends StatelessWidget {
@@ -17,7 +15,6 @@ class Destini extends StatelessWidget {
   }
 }
 
-// Step 9 - Create a new storyBrain object from the StoryBrain class.
 final storyLogic = StoryLogic();
 
 class StoryPage extends StatefulWidget {
@@ -34,7 +31,6 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // Step 1 - Add background.png to this Container as a background image.
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/background.png'),
@@ -51,11 +47,10 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 12,
                 child: Center(
                   child: Text(
-                    // Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
                     // 'Story text will go here.',
                     storyLogic.getStory(),
                     style: const TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
@@ -65,18 +60,14 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     //Choice 1 made by user.
-                    // Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
                     storyLogic.nextStory(1);
                   },
-
-                  // color: Colors.red,
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all<Color>(Colors.red),
                     foregroundColor:
                         WidgetStateProperty.all<Color>(Colors.white),
                   ),
                   child: Text(
-                    // Step 13 - Use the storyBrain to get the text for choice 1.
                     // 'Choice 1',
                     storyLogic.getChoice1(),
                     style: const TextStyle(
@@ -95,10 +86,8 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     //Choice 2 made by user.
-                    // Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
                     storyLogic.nextStory(2);
                   },
-                  // color: Colors.blue,
                   style: ButtonStyle(
                     backgroundColor:
                         WidgetStateProperty.all<Color>(Colors.blue),
@@ -106,7 +95,6 @@ class _StoryPageState extends State<StoryPage> {
                         WidgetStateProperty.all<Color>(Colors.white),
                   ),
                   child: Text(
-                    // Step 14 - Use the storyBrain to get the text for choice 2.
                     // 'Choice 2',
                     storyLogic.getChoice2(),
                     style: const TextStyle(
