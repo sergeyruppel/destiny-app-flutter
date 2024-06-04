@@ -1,3 +1,3 @@
-# destiny_app_flutter
+# Destiny App
 
-A new Flutter project.
+An educational Flutter project.
